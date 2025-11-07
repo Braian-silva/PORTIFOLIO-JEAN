@@ -1,0 +1,170 @@
+
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Jean Carlos | Fotógrafo Profissional</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <div class="brand">
+      <img class="logo" src="logojc.jpg" alt="Logo Jean Carlos">
+      <div class="header-title">
+        <h1 id="siteMainTitle">Jean Carlos | Fotógrafo Profissional</h1>
+        <div class="muted">Retratos • Eventos • Ensaios</div>
+      </div>
+    </div>
+
+    <!-- Painel Admin no topo (visível) -->
+    <div class="admin-area">
+      <div class="admin-box" id="adminBox">
+        <div class="admin-left">
+          <label class="lbl">Usuário</label>
+          <input id="admUser" class="input" placeholder="Usuário">
+          <label class="lbl">Senha</label>
+          <input id="admPass" class="input" type="password" placeholder="Senha">
+          <div style="display:flex;gap:8px;margin-top:8px">
+            <button id="doLogin" class="btn">Entrar</button>
+            <button id="btnTogglePanel" class="btn ghost">Abrir Painel</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="main">
+    <section class="hero" aria-label="Apresentação">
+      <div class="hero-left">
+        <h2 class="gold-anim">Capturando momentos com alma</h2>
+        <p id="heroSubtitle">Sou Jean Carlos — fotógrafo profissional com foco em retratos e eventos. Transformo memórias em imagens únicas e atemporais.</p>
+      </div>
+    </section>
+
+    <section id="portifolio" aria-labelledby="portifolioTitle">
+      <h3 id="portifolioTitle" class="section-title">Portfólio</h3>
+      <div class="galeria" id="gallery" aria-live="polite">
+        <!-- Imagens serão inseridas dinamicamente -->
+      </div>
+    </section>
+
+    <section id="sobre" aria-labelledby="sobreTitle">
+      <h3 id="sobreTitle" class="section-title">Sobre Mim</h3>
+      <div class="about" id="aboutTextArea"></div>
+    </section>
+
+    <section id="contato" aria-labelledby="contatoTitle">
+      <h3 id="contatoTitle" class="section-title">Endereço</h3>
+      <div class="contact center" id="contactArea"></div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-line">
+      © 2025 <strong>Jean Carlos</strong> — <a id="portfolioLink" href="https://braian-silva.github.io/PORTIFOLIO/" target="_blank" rel="noopener noreferrer">Fantasminha Dev</a>. Todos os direitos reservados.
+    </div>
+
+    <div class="socials" aria-hidden="false">
+      <!-- Instagram (marca colorida) -->
+      <a class="social-btn" href="https://www.instagram.com/jc.fotografiaoficial/#" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><defs></defs>
+          <linearGradient id="igg" x1="0" x2="1"><stop offset="0" stop-color="#f58529"/><stop offset="0.5" stop-color="#dd2a7b"/><stop offset="1" stop-color="#515bd4"/></linearGradient>
+          <rect width="24" height="24" rx="5" fill="url(#igg)"></rect>
+          <path d="M12 7.2A4.8 4.8 0 1 0 12 16.8 4.8 4.8 0 1 0 12 7.2Z" fill="#fff" opacity="0.9"/>
+          <circle cx="17.8" cy="6.2" r="1.1" fill="#fff" opacity="0.9"/>
+        </svg>
+        Instagram
+      </a>
+
+      <!-- LinkedIn (azul oficial) -->
+      <a class="social-btn linkedin" href="https://www.linkedin.com/in/jean-carlos-5a7591359/overlay/about-this-profile/?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base%3BNpk8jNYpR9OvqHYXy%2Fz5dA%3D%3D" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="#0A66C2" aria-hidden="true"><path d="M4.98 3.5C4.98 4.88 3.88 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM0 8h5v16H0V8zm7.5 0h4.8v2.2h.1c.67-1.3 2.3-2.7 4.7-2.7 5 0 5.9 3.3 5.9 7.6V24h-5v-7.2c0-1.7 0-3.9-2.4-3.9-2.4 0-2.8 1.9-2.8 3.8V24h-5V8z"/></svg>
+        LinkedIn
+      </a>
+
+      <!-- Email (Gmail-like color) -->
+      <a class="social-btn email" href="mailto:braiansilva76g@gmail.com" aria-label="Enviar email">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="#D14836" aria-hidden="true"><path d="M20 4H4a2 2 0 0 0-2 2v0.2l10 6.1 10-6.1V6a2 2 0 0 0-2-2z"/><path d="M22 8.2l-10 6.1L2 8.2V18a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8.2z"/></svg>
+        E-mail
+      </a>
+    </div>
+  </footer>
+
+  <!-- Lightbox -->
+  <div id="lightbox" class="lightbox" role="dialog" aria-hidden="true">
+    <img id="lightboxImg" src="" alt="Visualização">
+    <span id="closeLightbox" class="close-lightbox" title="Fechar">&times;</span>
+  </div>
+
+  <!-- Painel (overlay) -->
+  <div id="panelOverlay" class="modal" aria-hidden="true">
+    <div class="panel" role="dialog" aria-modal="true" aria-labelledby="panelTitle">
+      <div class="left-col">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px">
+          <h4 id="panelTitle" style="color:var(--gold);margin:0">Painel Administrativo — Jean Carlos</h4>
+          <div class="muted">Sessão segura</div>
+        </div>
+
+        <div id="adminControls" style="display:none">
+          <label class="muted">Título do site</label>
+          <input id="siteTitle" class="input" placeholder="Título do site">
+
+          <label class="muted">Sobre Mim (HTML simples)</label>
+          <textarea id="aboutInput" class="input" rows="5" placeholder="Texto Sobre Mim"></textarea>
+
+          <label class="muted">Contato (HTML ou texto)</label>
+          <textarea id="contactInput" class="input" rows="3" placeholder="Contato"></textarea>
+
+          <hr style="border-color:rgba(255,255,255,0.03);margin:12px 0">
+
+          <label class="muted">Enviar nova foto</label>
+          <input id="fileInput" type="file" accept="image/*" class="input">
+          <input id="imgTitle" class="input" placeholder="Título da foto">
+          <input id="imgDesc" class="input" placeholder="Descrição (opcional)">
+          <div style="display:flex;gap:8px;margin-top:8px">
+            <button id="uploadBtn" class="btn">Enviar</button>
+            <button id="exportBtn" class="btn ghost">Exportar backup</button>
+            <label class="btn ghost" style="cursor:pointer">
+              Importar
+              <input id="importFile" type="file" accept="application/json" style="display:none">
+            </label>
+          </div>
+
+          <hr style="border-color:rgba(255,255,255,0.03);margin:12px 0">
+
+          <h4 style="color:var(--gold);margin:8px 0">Imagens cadastradas</h4>
+          <div class="list" id="adminList"></div>
+
+          <div style="display:flex;justify-content:space-between;margin-top:12px">
+            <button id="logoutAdmin" class="btn ghost">Logout</button>
+            <button id="closePanelBtn" class="btn ghost">Fechar</button>
+          </div>
+        </div>
+
+        <!-- login hidden message removed - credentials not shown -->
+        <div id="loginHint" style="display:none"></div>
+      </div>
+
+      <div class="right-col" style="padding:8px">
+        <div style="text-align:center;margin-bottom:12px">
+          <div style="width:140px;height:140px;margin:auto;border-radius:12px;overflow:hidden;box-shadow:0 10px 36px rgba(0,0,0,0.6)">
+            <img id="previewLogo" src="logojc.jpg" style="width:100%;height:100%;object-fit:cover"/>
+          </div>
+          <div class="muted" style="margin-top:10px">Prévia</div>
+        </div>
+
+        <div style="margin-top:12px">
+          <h4 class="muted">Estatísticas</h4>
+          <div id="stats" class="muted">Imagens: 0</div>
+        </div>
+      </div>
+
+      <span class="close-x" id="modalCloseX" title="Fechar painel">&times;</span>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
